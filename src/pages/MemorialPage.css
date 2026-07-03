@@ -1,0 +1,386 @@
+.memorial-page {
+  background-color: var(--color-surface);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.memorial-page__hero {
+  position: relative;
+  background-image: url('/m4.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-block: var(--space-20) var(--space-12);
+  text-align: center;
+}
+
+.memorial-page__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(1, 99, 53, 0.95); /* Forest Green solid overlay (no gradients) */
+  z-index: 1;
+}
+
+.memorial-page__hero-inner {
+  position: relative;
+  z-index: 2;
+  color: var(--color-white);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.memorial-page__eyebrow {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-dark-yellow);
+  margin-bottom: var(--space-3);
+}
+
+.memorial-page__title {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-4);
+  color: var(--color-white);
+}
+
+.memorial-page__subtitle {
+  font-size: var(--font-size-base);
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: var(--line-height-relaxed);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Container */
+.memorial-page__container {
+  padding-block: var(--space-12) var(--space-20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* Intro Card */
+.memorial-page__intro-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-10);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-green);
+  box-shadow: var(--shadow-sm);
+}
+
+.memorial-page__section-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-green);
+  margin-bottom: var(--space-3);
+}
+
+.memorial-page__divider {
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-dark-yellow);
+  margin-bottom: var(--space-6);
+  border-radius: var(--radius-full);
+}
+
+.memorial-page__intro-card p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.memorial-page__intro-card p + p {
+  margin-top: var(--space-4);
+}
+
+/* Sections Header */
+.memorial-page__section-header {
+  margin-bottom: var(--space-10);
+  text-align: center;
+}
+
+.memorial-page__badge {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-dark-yellow);
+  background-color: var(--color-dark-yellow-light);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+.memorial-page__section-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-top: var(--space-2);
+}
+
+/* Profile Grid */
+.memorial-page__profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.memorial-page__profiles-grid > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.memorial-page__profiles-grid > * > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.memorial-page__profile-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.memorial-page__profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-green);
+}
+
+.memorial-page__profile-header {
+  background-color: var(--color-dark-yellow-light);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.memorial-page__profile-lifespan {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-yellow);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-1);
+}
+
+.memorial-page__profile-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-green);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-1);
+}
+
+.memorial-page__profile-role {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.memorial-page__profile-body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.memorial-page__alias-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.alias-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1px;
+}
+
+.alias-value {
+  font-size: var(--font-size-sm);
+  color: var(--color-green);
+  font-weight: var(--font-weight-bold);
+}
+
+.memorial-page__profile-bio {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+
+
+/* Gallery Grid */
+.memorial-page__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.memorial-page__gallery-grid > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.memorial-page__gallery-grid > * > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.memorial-page__gallery-item {
+  margin: 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.memorial-page__gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-green);
+}
+
+.memorial-page__gallery-img-wrap {
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.memorial-page__gallery-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2; /* Symmetrical uniform aspect ratio */
+  object-fit: cover; /* Uniform fit with no blank gaps */
+  filter: grayscale(100%);
+  transition: transform var(--transition-base), filter var(--transition-base);
+}
+
+.memorial-page__gallery-item:hover .memorial-page__gallery-img {
+  transform: scale(1.03);
+  filter: grayscale(0%); /* Premium archives visual restore */
+}
+
+.memorial-page__gallery-caption {
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-white);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.memorial-page__gallery-caption p {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* Solemn Tribute Section */
+.memorial-page__tribute-card {
+  background-color: var(--color-green);
+  border-radius: var(--radius-lg);
+  padding: var(--space-10) var(--space-8);
+  text-align: center;
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  position: relative;
+}
+
+.memorial-page__tribute-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-yellow); /* Gold highlight */
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.memorial-page__tribute-divider {
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-dark-yellow);
+  border-radius: var(--radius-full);
+  margin-top: calc(-1 * var(--space-2));
+}
+
+.memorial-page__tribute-names {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block: var(--space-2);
+}
+
+.memorial-page__tribute-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  letter-spacing: 0.02em;
+}
+
+.memorial-page__tribute-footer {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .memorial-page__profiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .memorial-page__hero {
+    padding-block: var(--space-16) var(--space-10);
+  }
+
+  .memorial-page__container {
+    padding-block: var(--space-8) var(--space-12);
+    gap: var(--space-12);
+  }
+
+  .memorial-page__intro-card,
+  .memorial-page__tribute-card {
+    padding: var(--space-6);
+  }
+
+  .memorial-page__profiles-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+

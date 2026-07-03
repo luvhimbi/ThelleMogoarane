@@ -1,0 +1,32 @@
+.not-found {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-24);
+  background-color: var(--color-surface);
+  text-align: center;
+}
+
+.not-found__title {
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-green);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.not-found__subtitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.not-found__text {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 500px;
+  margin-inline: auto;
+}
